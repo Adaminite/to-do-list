@@ -1,4 +1,35 @@
 *{
     margin: 0;
     padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* Structural styling */
+body{
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#content{
+    display: flex;
+
+    min-height: 700px;
+    width: 900px;
+
+}
+
+#sidebar{
+    width: 33.3%;
+    background-color: chocolate;
+}
+
+#items{
+    width: 66.7%;
+    background-color: red;
 }
