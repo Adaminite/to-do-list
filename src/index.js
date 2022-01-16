@@ -1,5 +1,6 @@
 import renderMainDiv from "./mainwindow.js";
 import '../styles/style.css';
+
 const displayController = ( () => {
 
     const body = document.querySelector('body');

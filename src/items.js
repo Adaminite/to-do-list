@@ -1,5 +1,3 @@
-
-
 function items(){
     let itemDiv = document.createElement('div');
     itemDiv.id = "items";
