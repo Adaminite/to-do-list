@@ -1,7 +1,8 @@
-
-
 const sidebar = ( () => {
     
+    const a;
+    const projects = [];
+
     const renderSidebar = () => {
         let sidebar = document.createElement('div');
         sidebar.id = "sidebar";
@@ -9,9 +10,13 @@ const sidebar = ( () => {
         return sidebar;
     }
 
-    
-    return {renderSidebar};
+    const addProject = () => {
+
+    }
+
+    return {renderSidebar, addProject};
+
 })();
 
 
-export default sidebar.renderSidebar;
+export {sidebar};
