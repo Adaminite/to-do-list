@@ -1,6 +1,6 @@
 const sidebar = ( () => {
     
-    const a;
+    let a = 10;
     const projects = [];
 
     const renderSidebar = () => {
