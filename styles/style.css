@@ -11,17 +11,15 @@ body{
     height: 100vh;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
 #content{
+    flex: auto;
     display: flex;
-
-    min-height: 700px;
-    width: 900px;
-
 }
 
 #sidebar{
@@ -32,4 +30,24 @@ body{
 #items{
     width: 66.7%;
     background-color: red;
+}
+
+#header, #footer{
+    text-align: left;
+    background-color: black;
+    color: white;
+    
+    
+}
+
+#footer{
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+}
+
+#header{
+    text-align: left;
+    padding: 10px;
+    font-size: 48px;
 }
