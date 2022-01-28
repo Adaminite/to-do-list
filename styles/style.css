@@ -16,22 +16,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
 
 }
-
-#content{
-    flex: auto;
-    display: flex;
-}
-
-#sidebar{
-    width: 33.3%;
-    background-color: chocolate;
-}
-
-#items{
-    width: 66.7%;
-    background-color: red;
-}
-
+/* Header and Footer */
 #header, #footer{
     text-align: left;
     background-color: black;
@@ -48,6 +33,26 @@ body{
 
 #header{
     text-align: left;
-    padding: 10px;
-    font-size: 48px;
+    padding: 20px;
+    font-size: 36px;
 }
+
+/* Tasks and Projects */
+#content{
+    flex: auto;
+    display: flex;
+}
+
+#sidebar{
+    width: 33.3%;
+    background-color: chocolate;
+}
+
+#items{
+    width: 66.7%;
+    background-color: red;
+
+    display: flex;
+    flex-direction: column;
+}
+
