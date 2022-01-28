@@ -1,5 +1,5 @@
 import sidebar from "./sidebar.js";
-import items from "./items.js";
+import taskContainer from "./taskcontainer.js";
 
 
 function renderMainDiv() {
@@ -7,7 +7,7 @@ function renderMainDiv() {
     mainDiv.id = "content";
     
     mainDiv.appendChild( sidebar() );
-    mainDiv.appendChild( items() );
+    mainDiv.appendChild( taskContainer() );
     
     return mainDiv;
 }
