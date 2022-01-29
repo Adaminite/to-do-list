@@ -54,5 +54,14 @@ body{
 
     display: flex;
     flex-direction: column;
+
+    padding: 10px;
+}
+
+#task-subheader{
+    background-color: orange;
+    color: white;
+    font-size: 30px;
+    text-align: center;
 }
 
