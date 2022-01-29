@@ -99,14 +99,87 @@ body{
     align-items: center;
     justify-content: center;
 
+
 }
 
 #task-modal-content{
 
     background-color: white;
 
-    width: 500px;
+    width: 700px;
     height: 500px;
 
+    position: relative;
 
+    padding: 20px;
+    text-align: center;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    border: 0;
+
+    cursor: pointer;
+
+    font-size: 50px;
+
+    transform: rotate(45deg); 
+
+    background-color: white;
+
+}
+
+.modal-header{
+    font-size: 40px;
+    
+}
+
+#add-task-form{
+    position: absolute;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    margin: 5px;
+}
+
+.modal-img{
+
+    height: 150px;
+    width: 150px;
+    margin-top: 10px;
+}
+
+.add-label{
+    font-size: 36px;
+    width: 100px;
+    text-align: left;
+    
+}
+.add-input{
+    padding: 10px;
+    flex: auto;
+    font-size: inherit;
+}
+
+#submitBtn{
+    font-size: 25px;
+    padding: 5px;
+
+    margin-top: 10px
 }
