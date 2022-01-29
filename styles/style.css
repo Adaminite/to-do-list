@@ -65,9 +65,8 @@ body{
     text-align: center;
 }
 
-#add-btn{
+#add-btn, .task{
     
-    background-color: white;
     color: black;
     font-size: 16px;
     padding-top: 5px;
@@ -76,6 +75,14 @@ body{
     margin-top: 10px;
 
     border: 0;
+}
+
+#add-btn{
+    background-color: white;
+}
+
+.task{
+    background-color: lightblue;
 }
 
 
