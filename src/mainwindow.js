@@ -1,4 +1,4 @@
-import {sidebar} from "./sidebar.js";
+import sidebar from "./sidebar.js";
 import taskContainer from "./taskcontainer.js";
 
 
