@@ -43,11 +43,61 @@ body{
     display: flex;
 }
 
+/* Sidebar Stuff */
 #sidebar{
     width: 33.3%;
     background-color: chocolate;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+#main-sidebars{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 100%;
+}
+
+.sidebar-tab{
+    cursor: pointer;
+    font-size: 26px;
+
+    display: block;
+    border: 0;
+    background-color: chocolate;
+}
+
+.sidebar-tab:hover{
+    background-color: rgb(228, 105, 18);
+}
+
+#projects-header{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+#project-list{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#add-project-btn{
+    display: block;
+    width: 100px;
+    
+}
+
+
+/* Main */
 #items{
     width: 66.7%;
     background-color: red;
@@ -96,10 +146,11 @@ body{
 
 .right-items{
     display: flex;
+    gap: 10px
 }
 
-/* Pop-up modal */
-#task-modal{
+/* Pop-up modals */
+.modal{
 
     display: flex;
 
@@ -121,7 +172,7 @@ body{
 
 }
 
-#task-modal-content{
+.modal-content{
 
     background-color: white;
 
@@ -151,8 +202,7 @@ body{
 }
 
 .modal-header{
-    font-size: 40px;
-    
+    font-size: 40px;  
 }
 
 #add-task-form{
@@ -166,6 +216,10 @@ body{
 
     display: flex;
     flex-direction: column;
+}
+
+#add-project-form{
+    margin-top: 20px;
 }
 
 .form-input{
@@ -196,7 +250,7 @@ body{
     font-size: inherit;
 }
 
-#submitBtn{
+.submitBtn{
     font-size: 25px;
     padding: 5px;
 
