@@ -83,8 +83,20 @@ body{
 
 .task{
     background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px;
+    
 }
 
+.left-items{
+
+}
+
+.right-items{
+    display: flex;
+}
 
 /* Pop-up modal */
 #task-modal{
