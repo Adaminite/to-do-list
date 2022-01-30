@@ -1,5 +1,5 @@
 import img from "../images/modal_img.png";
-import displayController from './tasks.js';
+import taskDisplayController from './tasks.js';
 
 function closeButton(){
     const close = document.createElement('button');
@@ -79,7 +79,7 @@ function inputForm(){
     const submitBtn = document.createElement('input');
     submitBtn.setAttribute('type', 'submit');
     submitBtn.setAttribute('value', 'Add Task');
-    submitBtn.id = "submitBtn";
+    submitBtn.classList.add("submitBtn");
 
     submitDiv.appendChild(submitBtn);
 
@@ -106,13 +106,14 @@ function createTask(form){
     const name = queries[0].value;
     const date = queries[1].value;
 
-    displayController.addTask(name, date);
+    taskDisplayController.addTask(name, date);
 
 }
 
 function modalContent(){
     const modal = document.createElement('div');
     modal.id = "task-modal-content";
+    modal.classList.add("modal-content");
 
     modal.appendChild( closeButton() );
     modal.appendChild( header() );
@@ -127,6 +128,7 @@ function taskModal(){
 
     container.classList.add('modal');
     container.id = "task-modal";
+    container.classList.add("modal");
 
     container.appendChild( modalContent() );
 
