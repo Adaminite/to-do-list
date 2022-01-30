@@ -88,7 +88,6 @@ const tasks = ( () => {
         allTasks = allTasks.filter( (task) => task.getProject() !== project);
         
         if(currProject === project){
-            currProject = "All";
             displayTasks("All");
         }
 

@@ -99,7 +99,7 @@ const sidebar = ( () => {
             deleteProject.classList.add("delete-project");
             deleteProject.addEventListener('click', (e) => {
                 let elementToRemove = e.target.parentElement;
-                taskDisplayController.deleteProjectTasks(elementToRemove.id);
+                taskDisplayController.deleteProjectTasks(name);
 
                 let idx = projects.indexOf(name);
 
@@ -145,7 +145,7 @@ const sidebar = ( () => {
             deleteProject.classList.add("delete-project");
             deleteProject.addEventListener('click', (e) => {
                 let elementToRemove = e.target.parentElement;
-                taskDisplayController.deleteProjectTasks(elementToRemove.id);
+                taskDisplayController.deleteProjectTasks(project);
 
                 let idx = projects.indexOf(project);
 
