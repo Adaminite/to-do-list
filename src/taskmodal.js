@@ -91,6 +91,9 @@ function inputForm(){
         e.preventDefault();
         createTask(addTask);
         addTask.reset();
+
+        const modal = document.querySelector("#task-modal");
+        modal.style.display = "none";
     });
 
     return addTask;
