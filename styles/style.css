@@ -67,7 +67,7 @@ body{
     cursor: pointer;
     font-size: 26px;
 
-    display: block;
+    display: inline-block;
     border: 0;
     background-color: chocolate;
 }
@@ -96,6 +96,15 @@ body{
     
 }
 
+.delete-project{
+    transform: rotate(45deg);
+    font-size: 15px;
+    border: 0;
+    background-color: chocolate;
+    cursor: pointer;
+
+    display: inline-block;
+}
 
 /* Main */
 #items{
