@@ -4,11 +4,11 @@ const tasks = ( () => {
 
     let allTasks = [];
 
-    const currProject = "all";
+    let currProject = "all";
 
     const addTask = (name, date) => {
 
-        const newTask = createTask(name, date);
+        const newTask = createTask(name, date, currProject);
         allTasks.push(newTask);
 
         createTaskDiv(newTask);
@@ -58,18 +58,33 @@ const tasks = ( () => {
 
     }
 
-    const displayTasks = () => {
-        const tasks = document.querySelector('#task-list');
+    const displayTasks = (project) => {
 
-        tasks.textContent = "";
+        if(project !== currProject){
 
-        for(let task of allTasks){
-            createTaskDiv(task);
+            currProject = project;
+            
+            const tasks = document.querySelector('#task-list');
+
+            tasks.textContent = "";
+
+            if(project === "All"){
+                for(let task of allTasks){
+                    createTaskDiv(task);
+                }
+            }
+
+            else{
+
+                let filteredTasks = allTasks.filter( (indTask) => (indTask.getProject() === project));
+                for(let task of filteredTasks){
+                    createTaskDiv(task);
+                }
+            }
         }
-
     }
 
-    return{addTask, currProject};
+    return{addTask, displayTasks};
 
 })();
 
