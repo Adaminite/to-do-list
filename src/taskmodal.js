@@ -1,4 +1,5 @@
 import img from "../images/modal_img.png";
+import displayController from './tasks.js';
 
 function closeButton(){
     const close = document.createElement('button');
@@ -31,6 +32,7 @@ function modalImg(){
 
     return image;
 }
+
 function inputForm(){
     const addTask = document.createElement('form');
     addTask.id = 'add-task-form';
@@ -85,7 +87,24 @@ function inputForm(){
     addTask.appendChild(dateDiv);
     addTask.appendChild(submitDiv);
 
+    addTask.addEventListener('submit', (e) => {
+        e.preventDefault();
+        createTask(addTask);
+        addTask.reset();
+    });
+
     return addTask;
+
+}
+
+function createTask(form){
+    const queries = form.elements;
+
+    const name = queries[0].value;
+    const date = queries[1].value;
+
+    displayController.addTask(name, date);
+
 }
 
 function modalContent(){
