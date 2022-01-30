@@ -1,3 +1,5 @@
+import taskDisplayController from "./tasks.js";
+
 const sidebar = ( () => {
     
     let a = 10;
@@ -29,14 +31,23 @@ const sidebar = ( () => {
         let all = document.createElement('button');
         all.textContent = "All";
         all.classList.add("sidebar-tab");
+        all.addEventListener('click', () => {
+            taskDisplayController.displayTasks(all.textContent);
+        });
 
         let today = document.createElement('button');
         today.textContent = "Today";
         today.classList.add("sidebar-tab");
+        today.addEventListener('click', () => {
+            taskDisplayController.displayTasks(today.textContent);
+        });
 
         let thisWeek = document.createElement('button');
         thisWeek.textContent = "This Week";
         thisWeek.classList.add("sidebar-tab");
+        thisWeek.addEventListener('click', () => {
+            taskDisplayController.displayTasks(thisWeek.textContent);
+        });
 
         timeDiv.appendChild(all);
         timeDiv.appendChild(today);
@@ -73,6 +84,10 @@ const sidebar = ( () => {
         let newProject = document.createElement('button');
         newProject.textContent = name;
         newProject.classList.add("sidebar-tab");
+
+        newProject.addEventListener('click', (e) => {
+            taskDisplayController.displayTasks(newProject.textContent);
+        });
 
         projectList.appendChild(newProject);
 
