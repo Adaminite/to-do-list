@@ -2,6 +2,7 @@ import renderMainDiv from "./mainwindow.js";
 import header from "./header.js";
 import footer from "./footer.js";
 import taskModal from "./taskmodal.js";
+import projectModal from "./projectmodal.js";
 import '../styles/style.css';
 
 const displayController = ( () => {
@@ -12,6 +13,7 @@ const displayController = ( () => {
         body.appendChild(header);
         body.appendChild( renderMainDiv() );
         body.appendChild( taskModal() );
+        body.appendChild( projectModal() );
         body.appendChild(footer);
     }
 
