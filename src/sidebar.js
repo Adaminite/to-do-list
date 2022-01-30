@@ -2,8 +2,7 @@ import taskDisplayController from "./tasks.js";
 
 const sidebar = ( () => {
     
-    let a = 10;
-    const projects = [];
+    let projects = [];
 
     const renderSidebar = () => {
         let sidebar = document.createElement('div');
@@ -79,18 +78,88 @@ const sidebar = ( () => {
     }
 
     const addProject = (name) => {
+
+        if(!projects.includes(name) || isNaN(name)){
+
+            let projectList = document.querySelector("#project-list");
+
+            let projContainer = document.createElement('div');
+            projContainer.id = name;
+    
+            let newProject = document.createElement('button');
+            newProject.textContent = name;
+            newProject.classList.add("sidebar-tab");
+    
+            newProject.addEventListener('click', (e) => {
+                taskDisplayController.displayTasks(newProject.textContent);
+            });
+    
+            let deleteProject = document.createElement('button');
+            deleteProject.textContent = "+";
+            deleteProject.classList.add("delete-project");
+            deleteProject.addEventListener('click', (e) => {
+                let elementToRemove = e.target.parentElement;
+                taskDisplayController.deleteProjectTasks(elementToRemove.id);
+
+                let idx = projects.indexOf(name);
+
+                projects = projects.filter( (project, index) => {
+                    return index !== idx;
+                });
+
+                displayProjects();
+
+            });
+
+            projContainer.appendChild(newProject);
+            projContainer.appendChild(deleteProject);
+
+            projectList.appendChild(projContainer);
+
+            projects.push(name);
+    
+        }
+       
+    }
+
+    const displayProjects = () => {
         let projectList = document.querySelector("#project-list");
 
-        let newProject = document.createElement('button');
-        newProject.textContent = name;
-        newProject.classList.add("sidebar-tab");
+        projectList.textContent = "";
 
-        newProject.addEventListener('click', (e) => {
-            taskDisplayController.displayTasks(newProject.textContent);
-        });
+        for(let project of projects){
 
-        projectList.appendChild(newProject);
+            let projContainer = document.createElement('div');
+            projContainer.id = project;
+    
+            let newProject = document.createElement('button');
+            newProject.textContent = project;
+            newProject.classList.add("sidebar-tab");
+    
+            newProject.addEventListener('click', (e) => {
+                taskDisplayController.displayTasks(newProject.textContent);
+            });
+    
+            let deleteProject = document.createElement('button');
+            deleteProject.textContent = "+";
+            deleteProject.classList.add("delete-project");
+            deleteProject.addEventListener('click', (e) => {
+                let elementToRemove = e.target.parentElement;
+                taskDisplayController.deleteProjectTasks(elementToRemove.id);
 
+                let idx = projects.indexOf(project);
+
+                projects = projects.filter( (project, index) => {
+                    return index !== idx;
+                });
+
+            });
+
+            projContainer.appendChild(newProject);
+            projContainer.appendChild(deleteProject);
+
+            projectList.appendChild(projContainer);
+        }
     }
 
     return {renderSidebar, addProject};

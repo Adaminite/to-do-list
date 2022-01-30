@@ -4,7 +4,7 @@ const tasks = ( () => {
 
     let allTasks = [];
 
-    let currProject = "all";
+    let currProject = "All";
 
     const addTask = (name, date) => {
 
@@ -38,7 +38,7 @@ const tasks = ( () => {
                 return index != idx;
             });
 
-            displayTasks();
+            displayTasks(currProject, true);
         });
 
 
@@ -58,12 +58,12 @@ const tasks = ( () => {
 
     }
 
-    const displayTasks = (project) => {
+    const displayTasks = (project, bypass=false) => {
 
-        if(project !== currProject){
+        if(project !== currProject || bypass){
 
             currProject = project;
-            
+
             const tasks = document.querySelector('#task-list');
 
             tasks.textContent = "";
@@ -84,7 +84,20 @@ const tasks = ( () => {
         }
     }
 
-    return{addTask, displayTasks};
+    const deleteProjectTasks = (project) => {
+        allTasks = allTasks.filter( (task) => task.getProject() !== project);
+        
+        if(currProject === project){
+            currProject = "All";
+            displayTasks("All");
+        }
+
+        else{
+            displayTasks(currProject, true);
+        }
+    }
+
+    return{addTask, displayTasks, deleteProjectTasks};
 
 })();
 
