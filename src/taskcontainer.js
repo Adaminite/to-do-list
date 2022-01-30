@@ -21,11 +21,20 @@ function addTaskButton(){
 
     return btn;
 }
+
+function taskList(){
+    const taskList = document.createElement('div');
+    taskList.id = "task-list";
+
+    return taskList;
+
+}
 function taskContainer(){
     let itemDiv = document.createElement('div');
     itemDiv.id = "items";
 
     itemDiv.appendChild( subHeader() );
+    itemDiv.appendChild( taskList() );
     itemDiv.appendChild( addTaskButton() );
 
     return itemDiv;
