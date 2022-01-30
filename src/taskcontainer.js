@@ -1,5 +1,3 @@
-import taskModal from "./taskmodal.js";
-
 function subHeader(){
     let subHeader = document.createElement('h2');
     subHeader.textContent = "Tasks";
